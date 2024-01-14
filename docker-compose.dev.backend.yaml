@@ -1,0 +1,49 @@
+version: '3.9'
+services:
+
+  backend:
+    build: 
+      dockerfile: ./src/backend/Dockerfile
+      context: .
+    container_name: backend
+    links:
+      - postgresql:postgresql
+    depends_on:
+      - postgresql
+      - traefik
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.backend.service=backend"
+      - "traefik.http.routers.backend.rule=Host(`backend.localhost`)"
+      - "traefik.http.services.backend.loadbalancer.server.port=4000"
+    command: >
+      sh -c " python manage.py makemigrations &&
+              python manage.py migrate &&
+              python manage.py collectstatic --noinput &&
+              gunicorn server.wsgi:application --bind 0.0.0.0:4000"
+    environment:
+      - SECRET_KEY=a)&tg!@-@liw2+v!_64!v1_o+2r%e3ufl#e!n*_ar5a$q=9n!p
+      - DEBUG=1
+      - DB_NAME=postgresql
+      - DB_USER=postgresql
+      - DB_PASSWORD=postgresql
+      - DB_HOST=postgresql
+      - DB_PORT=5432
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+    networks:
+      - web
+    ports:
+      - "4000:4000"
+
+volumes:
+  media_volume:
+  static_volume:
+  postgres_data:
+
+networks:
+  web:
+    external: true
