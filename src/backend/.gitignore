@@ -4,9 +4,8 @@
 **/media
 **/env
 **/db.sqlite3
-**/__pycache__
 *.tmp
 *.log
 publish/
-**/__pycache__/
 *.pyc
+__pycache__/

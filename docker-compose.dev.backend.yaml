@@ -42,7 +42,6 @@ services:
 volumes:
   media_volume:
   static_volume:
-  postgres_data:
 
 networks:
   web:
