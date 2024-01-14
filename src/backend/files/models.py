@@ -9,3 +9,6 @@ class File(models.Model):
         default=uuid4,
         editable=False)
     file = models.FileField(upload_to="files/")
+
+    def __str__(self):
+        return f"File {str(self.id)}"
