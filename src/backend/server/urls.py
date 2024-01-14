@@ -29,6 +29,7 @@ urlpatterns = [
         path('auth/', include('authsystem.urls')),
         path('', include('files.urls')),
         path('', include('content.urls')),
+        path('', include('products.urls')),
 
     ]))
 ] + static(
