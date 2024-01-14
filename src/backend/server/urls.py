@@ -30,6 +30,7 @@ urlpatterns = [
         path('', include('files.urls')),
         path('', include('content.urls')),
         path('', include('products.urls')),
+        path('', include('tickets.urls')),
 
     ]))
 ] + static(

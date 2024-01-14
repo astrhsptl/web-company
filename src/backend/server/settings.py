@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "files",
     "content",
     "products",
+    "tickets",
 ]
 
 MIDDLEWARE = [
