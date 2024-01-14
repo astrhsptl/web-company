@@ -50,8 +50,6 @@ INSTALLED_APPS = [
     
     # third part
     "authsystem",
-    "products",
-    "orders",
 ]
 
 MIDDLEWARE = [
