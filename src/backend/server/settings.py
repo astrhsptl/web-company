@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # third part
     "authsystem",
     "files",
+    "content",
 ]
 
 MIDDLEWARE = [
