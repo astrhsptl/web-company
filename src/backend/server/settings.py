@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "content",
     "products",
     "tickets",
+    "utils"
 ]
 
 MIDDLEWARE = [
@@ -185,14 +186,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Email settings
 # https://docs.djangoproject.com/en/4.1/topics/email/
 
-# DEFAULT_FROM_EMAIL = env("EMAIL")
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-# EMAIL_HOST = "smtp.mail.ru"
-# EMAIL_HOST_USER = env("EMAIL")
-# EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
-# EMAIL_PORT = int(env("EMAIL_PORT"))
-# EMAIL_USE_TLS = False
-# EMAIL_USE_SSL = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_USE_TLS = False
+EMAIL_PORT = int( env("EMAIL_PORT") )
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = env("EMAIL")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 
 DJANGO_CHANNELS_REST_API = {}
 
