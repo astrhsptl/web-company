@@ -11,7 +11,7 @@ services:
       - "traefik.enable=true"
       - "traefik.docker.network=web"
       - "traefik.http.routers.backend.service=backend"
-      - "traefik.http.routers.backend.rule=Host(`backend.localhost`)"
+      - "traefik.http.routers.backend.rule=Host(`176.123.169.53`) && (PathPrefix(`/api/`) || PathPrefix(`/admin/`) || PathPrefix(`/media/`) || PathPrefix(`/static/`))"
       - "traefik.http.services.backend.loadbalancer.server.port=4000"
     command: >
       sh -c " python manage.py makemigrations &&
