@@ -31,6 +31,12 @@ services:
       - DB_PASSWORD=postgresql
       - DB_HOST=postgresql
       - DB_PORT=5432
+      - EMAIL=management.weblab@bk.ru
+      - EMAIL_HOST=smtp.mail.ru
+      - EMAIL_HOST_PASSWORD=AvW2GXLLWtGvWwtSpL6e
+      - EMAIL_PORT=465
+      - REDIS_PORT=6379
+      - REDIS_HOST=redis
     volumes:
       - static_volume:/app/static
       - media_volume:/app/media

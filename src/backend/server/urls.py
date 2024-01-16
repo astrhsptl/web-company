@@ -31,6 +31,7 @@ urlpatterns = [
         path('', include('content.urls')),
         path('', include('products.urls')),
         path('', include('tickets.urls')),
+        path('', include('utils.urls')),
 
     ]))
 ] + static(
