@@ -1,0 +1,26 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.headerLinkContainer {
+    display: flex;
+    gap: 5px;
+
+    text-decoration: none;
+    color: black;
+}
+
+.headerLink {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+@media (max-width: 750px) {
+    .headerContainer {
+        height: 60px;
+    }
+}
