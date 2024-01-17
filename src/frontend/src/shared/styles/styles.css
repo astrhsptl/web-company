@@ -1,0 +1,23 @@
+.container {
+    margin: 0px auto;
+    max-width: 80%;
+}
+
+@media (max-width: 750px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#root {
+    margin: 0;
+    background-color: #000;
+
+    min-height: 100dvh;
+    height: 100%;
+}

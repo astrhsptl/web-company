@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import BaseRouter from '@/app/BaseRouter.tsx'
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <React.StrictMode>
-        <App />
+        <BaseRouter />
       </React.StrictMode>
     </QueryClientProvider>
   </BrowserRouter>,
