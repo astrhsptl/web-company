@@ -1,0 +1,35 @@
+.homepageHead {
+    background-image: url(../images/background.jpeg);
+    height: 100dvh;
+
+    display: grid;
+    grid-template-rows: 100px calc(100dvh - 100px);
+
+    justify-items: center;
+    align-items: center;
+}
+
+.headTextPreview {
+    color: #fff;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 78px;
+
+    width: 80%;
+    text-align: center;
+}
+
+@media (max-width: 1150px) {
+    .headTextPreview {
+        font-size: 50px;
+    }
+}
+
+
+@media (max-width: 750px) {
+    .headTextPreview {
+        font-size: 24px;
+        width: 95%;
+        height: fit-content;
+    }
+}

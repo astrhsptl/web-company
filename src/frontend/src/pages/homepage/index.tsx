@@ -1,9 +1,9 @@
-import { Header } from "@/widgets/header"
-
+import { HomepageContent, HomepageHead } from "@/widgets/homepage"
 export const Homepage = () => {
     return (
         <>
-            <Header/>
+            <HomepageHead />
+            <HomepageContent />
         </>
     )
 }
