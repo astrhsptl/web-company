@@ -1,0 +1,48 @@
+.homepageHead {
+    background-image: url(../images/background.jpeg);
+    height: 100dvh;
+
+    display: grid;
+
+    justify-items: center;
+    align-items: center;
+}
+
+.headTextPreview {
+    color: #fff;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 78px;
+
+    width: 80%;
+    text-align: center;
+}
+
+.hack-container {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.hack-container > img {
+    height: 100px;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 1150px) {
+    .headTextPreview {
+        font-size: 50px;
+    }
+}
+
+
+@media (max-width: 750px) {
+    .headTextPreview {
+        font-size: 24px;
+        width: 95%;
+        height: fit-content;
+    }
+}

@@ -1,26 +1,119 @@
-.headerContainer {
+.header {
+    height: 100px;
+    width: 100%;
+
+    position: fixed;
+    top: 0px;
+}
+
+.headerPosition {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .headerLinkContainer {
     display: flex;
-    gap: 5px;
+    gap: 20px;
 
     text-decoration: none;
     color: black;
 }
 
-.headerLink {
+.headerLink, .headerBurgerContainer {
     color: #fff;
+    font-family: Montserrat;
+    font-weight: 900;
     text-decoration: none;
 }
 
+.linkLogo {
+    height: 35px;
+}
+
+
+.burgerHide {
+    display: none;
+}
+
+
+.burgerLinkContainer {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    height: 100dvh;
+    width: 350px;
+    background-color: #000;
+
+    display: grid;
+    grid-template-rows: 30% 70%;
+    
+    transition: transform .4s cubic-bezier(.86,0,.07,1);
+    transform: translateX(-350px);
+}
+
+
+.homeLink-modal {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.modal-link-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-top: 50px;
+    padding-right: 20px;
+    gap: 20px;
+}
+
+.modalActive {
+    transform: translateX(-0px);
+}
+
+.text-presentation-container {
+    color: #fff;
+    font-family: Montserrat;
+    line-height: 1.46;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.text-present {
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.container-custom {
+    margin: 80px auto;
+    text-align: center;
+    width: 60%;
+}
 
 @media (max-width: 750px) {
     .headerContainer {
         height: 60px;
     }
+
+    .burgerMenu__icon {
+        display:  block;
+        cursor: pointer;
+    }
+
+    .headerLink {
+        font-size: 24px;
+    }
+
+    .headerLinkContainer {
+        display: none;
+    }
+
+   
 }
