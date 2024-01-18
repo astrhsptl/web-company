@@ -26,7 +26,7 @@ export const Header = observer(() => {
           <Link to={"/ticket/new"} className="headerLink">Оставить заявку</Link>
         </span>
         <img src={burger} alt="" className="burgerMenu__icon burgerHide" onClick={() => modalStatement.switchState()}/>
-        <BurgerModal showed={modalStatement.showing} />
+        <BurgerModal showed={modalStatement.showing} closeModal={modalStatement.close} />
       </div>
     </header>
   )

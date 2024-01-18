@@ -33,14 +33,30 @@
 
 
 .burgerHide {
-    display:  none;
-}
-
-
-.modalHidden {
     display: none;
 }
 
+
+.burgerLinkContainer {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    height: 100dvh;
+    width: 250px;
+    background-color: #000;
+
+    display: grid;
+    grid-template-rows: 30% 70%;
+    
+    transition: transform .3s ease-in-out;
+    transform: translateX(-250px);
+}
+
+.modalHidden {
+    transform: translateX(-0px);
+
+}
 
 .homeLink-modal {
     display: flex;
@@ -62,19 +78,6 @@
         display: none;
     }
 
-    .burgerLinkContainer {
-        position: fixed;
-        top: 0px;
-        left: 0px;
-    
-        height: 100dvh;
-        width: 250px;
-        background-color: #000;
-    
-        display: grid;
-        grid-template-rows: 30% 70%;
-    }
-    
     .modal-link-container {
         display: flex;
         flex-flow: column wrap;

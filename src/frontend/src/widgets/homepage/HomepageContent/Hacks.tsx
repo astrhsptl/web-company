@@ -1,5 +1,5 @@
 export const Hacks = () => {
   return (
-    <div>HomepageContent</div>
+    <div>HomepageCont ent</div>
   )
 }
