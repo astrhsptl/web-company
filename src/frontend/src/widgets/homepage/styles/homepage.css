@@ -3,7 +3,6 @@
     height: 100dvh;
 
     display: grid;
-    grid-template-rows: 100px calc(100dvh - 100px);
 
     justify-items: center;
     align-items: center;
@@ -17,6 +16,20 @@
 
     width: 80%;
     text-align: center;
+}
+
+.hack-container {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.hack-container > img {
+    height: 100px;
+    margin-bottom: 80px;
 }
 
 @media (max-width: 1150px) {

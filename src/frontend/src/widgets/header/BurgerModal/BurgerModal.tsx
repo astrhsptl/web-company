@@ -8,11 +8,11 @@ interface ModalProps{
   closeModal(): void; 
 }
 
-
 export const BurgerModal: React.FC<ModalProps> = observer(({ showed, closeModal }) => {
   
   return (
-    <span className={`burgerLinkContainer ${ showed ? "modalHidden" : ""}`}>
+    <span className={
+      `burgerLinkContainer ${showed ? "modalActive" : ""}`}>
         <Link to={"/"} className="homeLink-modal" onClick={() => closeModal()}>
           <img src={logotype} className="linkLogo" alt="" />
         </Link>

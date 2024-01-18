@@ -1,9 +1,11 @@
-import { Hacks } from "./Hacks"
+import { QualificationList } from "./QualificationList";
+import { PresentText } from "./PresentText";
 
 export const HomepageContent = () => {
   return (
     <>
-      <Hacks />
+      <PresentText />
+      <QualificationList />
     </>
   )
 }
