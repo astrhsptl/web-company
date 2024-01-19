@@ -37,7 +37,7 @@
     justify-content: space-between;
     margin-bottom: 60px;
     max-width: 60%;
-    margin: 30px auto;
+    margin: 30px auto 80px auto;
 }
 
 .principle {
@@ -65,6 +65,40 @@
     border: none;
 }
 
+.fp-redirect {
+    color: #fff;
+    font-family: Montserrat;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.fp-asking {
+    font-size: 24px;
+    min-width: 50%;
+}
+
+.fp-description {
+    max-width: 50%;
+    font-size: 18px;
+}
+
+.description-text {
+    margin-bottom: 35px;
+}
+
+.fp-button {
+    padding: 10px 15px;
+    max-width: 300px;
+    width: 100%;
+
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 18px;
+
+    border: 2px solid #fff;
+    background-color: #000;
+}
 
 @media (max-width: 1150px) {
     .headTextPreview {
