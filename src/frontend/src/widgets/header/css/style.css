@@ -74,10 +74,6 @@
     gap: 20px;
 }
 
-.modalActive {
-    transform: translateX(-0px);
-}
-
 .text-presentation-container {
     color: #fff;
     font-family: Montserrat;
@@ -115,5 +111,33 @@
         display: none;
     }
 
-   
+    .text-presentation-container {
+        font-size: 18px;
+    }
+
+    .container-custom {
+        width: 90%; 
+    }
+}
+
+@media (max-width: 750px) {
+    .burgerLinkContainer {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    
+        width: 300px;
+        height: 100dvh;
+        background-color: #000;
+    
+        display: grid;
+        grid-template-rows: 30% 70%;
+        
+        transition: transform .4s cubic-bezier(.86,0,.07,1);
+        transform: translateX(-300px);
+    }
+    
+    .modalActive {
+        transform: translateX(-0px);
+    }
 }
