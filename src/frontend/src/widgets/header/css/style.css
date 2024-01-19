@@ -79,12 +79,16 @@
     font-family: Montserrat;
     line-height: 1.46;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .text-present {
     font-weight: 900;
     margin-bottom: 20px;
+}
+
+.text-present-under {
+    font-size: 16px;
 }
 
 .container-custom {
