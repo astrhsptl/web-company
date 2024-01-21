@@ -19,8 +19,8 @@ class ProductWorkSerializer(ModelSerializer):
 
 class ProductSerializer(ModelSerializer):
     customer = CustomerSerializer(source='customer_id', many=False, read_only=True)
-    works = ProductWorkSerializer(source='product_works', many=True, read_only=True)
-    images = FileSerializer(source='product_file', many=True, read_only=True)
+    works = ProductWorkSerializer(many=True, read_only=True)
+    images = FileSerializer(many=True, read_only=True)
 
     class Meta:
         model = Product
