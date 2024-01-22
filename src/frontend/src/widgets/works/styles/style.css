@@ -1,0 +1,29 @@
+.work-titles-container {
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+    color: #fff;
+    font-family: Montserrat;
+}
+
+.work-title, .work-description {
+    text-align: center;    
+}
+
+.work-title {
+    font-weight: 900;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 650px) {
+    .work-title {
+        font-size: 22px;
+    }
+
+    .work-description {
+        font-size: 18px;
+    }
+}
