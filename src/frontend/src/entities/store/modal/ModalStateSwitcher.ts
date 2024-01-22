@@ -14,7 +14,7 @@ class ModalStatementHandler {
     open = () => {
         this.showing = true;
         window.removeEventListener('DOMMouseScroll', this.preventDefault, false);
-        window.removeEventListener(this.wheelEvent, this.preventDefault, {passive: false}); 
+        window.removeEventListener(this.wheelEvent, this.preventDefault); 
         window.removeEventListener('touchmove', this.preventDefault, false);
         window.removeEventListener('keydown', this.preventDefaultForScrollKeys, false);
     }
@@ -33,8 +33,7 @@ class ModalStatementHandler {
         } else {
             this.close()
         }
-
-        this.showing = !this.showing;        
+        this.showing = !this.showing;
     }
 
     preventDefault = (e: Event) => {
@@ -42,10 +41,9 @@ class ModalStatementHandler {
     }
     
     preventDefaultForScrollKeys = (e: KeyboardEvent) => {
-        this.preventDefault(e);
+        // this.preventDefault(e);
         let keys = ["ArrowDown", "ArrowUp", "PageUp", "PageDown"];
         if (e.key in keys) {
-            this.preventDefault(e)
             return false
         };
         if (e.key == "Escape") {
