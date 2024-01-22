@@ -5,14 +5,20 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from 'react-router-dom';
 
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false
+    }
+  }
+});
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
-    <QueryClientProvider client={queryClient}>
-      <React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
         <Application />
-      </React.StrictMode>
-    </QueryClientProvider>
-  </BrowserRouter>,
+      </QueryClientProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 )
