@@ -1,0 +1,28 @@
+.service-work-container {
+    color: #fff;
+    font-family: Montserrat;
+
+    margin: 140px auto 0px auto;
+    max-width: 500px;
+}
+
+.service-collection {
+    text-align: center;
+}
+
+.service-collection > li {
+    margin-bottom: 8px;
+}
+
+.service-work-title {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 900;
+
+    text-align: center;
+}
+
+.service-work-link {
+    color: #fff;
+    text-decoration: none;
+}
