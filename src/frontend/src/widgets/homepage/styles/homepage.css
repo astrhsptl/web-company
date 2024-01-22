@@ -98,6 +98,8 @@
 
     border: 2px solid #fff;
     background-color: #000;
+
+    cursor: pointer;
 }
 
 @media (max-width: 1150px) {
@@ -145,4 +147,30 @@
         font-size: 14px;
     }
 
+    .fp-asking {
+        font-size: 18px;
+        width: 100%;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .description-text {
+        font-size: 16px;
+    }
+
+    .fp-description {
+        max-width: 100%;
+        min-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .fp-button {
+        max-width: 100%;
+    }
+
+    .fp-redirect {
+        display: flex;
+        flex-flow: column wrap;
+    } 
 }
