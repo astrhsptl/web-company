@@ -1,0 +1,112 @@
+.ticket-form-container {
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    position: relative;
+
+    color: #fff;
+    font-family: Montserrat;
+    text-align: center;
+
+    padding-top: 200px;
+}
+
+.form-ticket {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.ticket-form-title {
+    margin-bottom: 30px;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.message-form__error {
+    color: #fff;
+    text-align: left;
+    size: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-decoration: underline;
+}
+
+.form-part-ticket {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+}
+
+.form-title-sub {
+    margin: 10px 10px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.input-textarea {
+    padding-top: 10px;
+    font-size: 14px;
+    resize: none;
+    height: 150px;
+    width: 100%;
+
+    border: none;
+	border-bottom: 1.5px solid #a0a0a0;
+	width: 100%;
+	margin-bottom: 12px;
+	background-color: #000;
+	
+	font-family: Montserrat;
+	color: #fff;	
+	transition: all 0.15s linear;
+	will-change: contents;
+}
+
+.input-textarea:focus {
+	outline: none;
+	font-size: 18px;
+	padding-left: 15px;
+}
+
+.text-input__custom-input {
+	border: none;
+	border-bottom: 1.5px solid #a0a0a0;
+	height: 38px;
+	width: 100%;
+	margin-bottom: 12px;
+	background-color: #000;
+	
+	font-family: Montserrat;
+	color: #fff;	
+	transition: all 0.15s linear;
+	will-change: contents;
+}
+
+.text-input__custom-input::placeholder {
+	color: #fff;
+    font-size: 14px;
+}
+
+.text-input__custom-input:focus {
+	outline: none;
+	height: 44px;
+	font-size: 18px;
+	padding-left: 15px;
+}
+
+@media (max-width: 550px) {
+    .form-part-ticket {
+        grid-template-columns: none;
+        grid-template-rows: 1fr;
+    }
+
+    .form-title-sub {
+        margin-bottom: 20px;
+        font-size: 14px;
+        
+    }
+}

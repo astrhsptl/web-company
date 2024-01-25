@@ -75,3 +75,49 @@ body {
     min-height: 100dvh;
     height: 100%;
 }
+
+
+.text-input__classic {
+	border: 1.5px solid #fff;
+	border-radius: 5px;
+	height: 38px;
+	padding-left: 10px;
+	width: 100%;
+	margin-bottom: 12px;
+	background-color: #000;
+	
+	font-family: Montserrat;
+	color: #fff;	
+	transition: all 0.15s linear;
+	will-change: contents;
+}
+
+.text-input__classic::placeholder {
+	color: #fff;	
+	text-decoration: underline;
+}
+
+.text-input__classic:focus {
+	outline: none;
+	height: 44px;
+	font-size: 18px;
+	padding-left: 15px;
+}
+
+.button__classic {
+	padding: 10px 15px;
+	max-width: 300px;
+	width: 100%;
+	color: #fff;
+	font-family: Montserrat;
+	font-size: 18px;
+	border: 1.5px solid #fff;
+	background-color: #000;
+	cursor: pointer;
+}
+
+@media (max-width: 750px) {
+	.button__classic{
+	  font-size: 14px;
+	}
+}
