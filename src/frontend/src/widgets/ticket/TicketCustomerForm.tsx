@@ -3,6 +3,7 @@ import "./style/style.css";
 import { UserDataFormCard } from "./components/UserDataFormCard";
 import { TicketDataFormCard } from "./components/TicketDataFormCard";
 import { FileInputTicket } from "./components/FileInputTicket";
+import { useState } from "react";
 
 
 interface TicketInput{
@@ -18,6 +19,7 @@ interface TicketInput{
 
 export const TicketCustomerForm = () => {
   const methods = useForm<TicketInput>();
+  const [files, setFiles] = useState<File[]>([]);
   const onSubmit: SubmitHandler<TicketInput> = (data, ...asd) => {
     console.log(data, asd);
   }
@@ -29,7 +31,7 @@ export const TicketCustomerForm = () => {
       <form onSubmit={methods.handleSubmit(onSubmit)} className="form-ticket">
         <UserDataFormCard />
         <TicketDataFormCard />
-        <FileInputTicket />
+        <FileInputTicket files={files} setFiles={setFiles} />
         <button
           type="submit"
           className="button__classic button-position__custom">
