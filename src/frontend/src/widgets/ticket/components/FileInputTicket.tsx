@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import closeSVG from "../svg/closeSVG.svg";
 
-export const FileInputTicket = () => {
-  const [files, setFiles] = useState<File[]>([]);
+interface PluralInputFile{
+  files: File[];
+  setFiles(files: File[]): void;
+}
 
-  useEffect(() => {
-    console.log(files);
-  }, [files]);
 
+export const FileInputTicket = ({ files, setFiles }: PluralInputFile) => {
   const onChangeAdditionFile = (event: React.ChangeEvent<HTMLInputElement>) => {
     const fileList = event.target.files;
     if (!fileList || fileList.length < 1) {
@@ -18,7 +18,6 @@ export const FileInputTicket = () => {
         return file;
       };
     })
-    
     setFiles([ ...files, ...fileArray]);
   };
 
@@ -26,16 +25,30 @@ export const FileInputTicket = () => {
   <div className='form-part-ticket'>
     <p className='form-title-sub'>Прикроепленные файлы</p>
     <div className="input-form-ticket-container file-input-container">
-      <label htmlFor={"field.id"} className="image-input-label">
-          Добавить файл
-          <input
-            id={"field.id"}
-            type="file"
-            className='image-input-file'
-            accept=".png,.jpg,.jpeg,.img,.pdf,.doc,.docx,.ppt,.pptx"
-            onChange={(e) => onChangeAdditionFile(e)}
-            multiple
+      <div className="file-container__uploaded">
+        { files.map(file => <div key={file.name} className="file__uploaded" >
+          { file.name }
+          <img
+            src={closeSVG}
+            alt=""
+            className="img-close-file"
+            onClick={() => {
+              let updatedFileList = files.filter((iteratedFile) => iteratedFile.name != file.name )
+              setFiles(updatedFileList);
+            } }
           />
+          </div> )}
+      </div>
+      <label htmlFor={"field.id"} className="image-input-label">
+        Добавить файл
+        <input
+          id={"field.id"}
+          type="file"
+          className='image-input-file'
+          accept=".png,.jpg,.jpeg,.img,.pdf,.doc,.docx,.ppt,.pptx"
+          onChange={(e) => onChangeAdditionFile(e)}
+          multiple
+        />
       </label>
     </div>
   </div>
