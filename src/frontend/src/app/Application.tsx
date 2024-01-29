@@ -7,6 +7,7 @@ import { CertainProduct } from "@/pages/certainProduct/CertainProduct"
 import ServicePage from "@/pages/serviceList";
 import { Ticket } from "@/pages/ticket"
 import "@/shared/styles/initial.css"
+import { TicketThanks } from "@/pages/ticketThanks/TicketThanks"
 
 
 export default function Application() {
@@ -17,6 +18,7 @@ export default function Application() {
       <Route key={'/blog'} path={"/blog"} element={<Blog />} />
       <Route key={'/service'} path={"/service"} element={<ServicePage />} />
       <Route key={'/ticket/new'} path={"/ticket/new"} element={<Ticket />} />
+      <Route key={'/ticket/new'} path={"/ticket/thanks"} element={<TicketThanks />} />
 
       <Route key={'/blog/:id'} path={"/blog/:id"} element={<CertainBlog />} />
       <Route key={'/product/:id'} path={"/product/:id"} element={<CertainProduct />} />

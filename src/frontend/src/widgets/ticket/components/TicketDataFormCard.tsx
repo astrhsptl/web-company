@@ -25,6 +25,7 @@ export const TicketDataFormCard = () => {
     />
     <textarea
       {...register("body", {
+        required: "Это поле обязательно",
         maxLength: 2048
       })}
       placeholder="Описание..."
