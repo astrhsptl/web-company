@@ -26,18 +26,23 @@ export const FileInputTicket = ({ files, setFiles }: PluralInputFile) => {
     <p className='form-title-sub'>Прикроепленные файлы</p>
     <div className="input-form-ticket-container file-input-container">
       <div className="file-container__uploaded">
-        { files.map(file => <div key={file.name} className="file__uploaded" >
-          { file.name }
-          <img
-            src={closeSVG}
-            alt=""
-            className="img-close-file"
-            onClick={() => {
-              let updatedFileList = files.filter((iteratedFile) => iteratedFile.name != file.name )
-              setFiles(updatedFileList);
-            } }
-          />
-          </div> )}
+        { files.map(file => {
+          return ( 
+          <div key={file.name} className="file__uploaded" >
+            <a href={URL.createObjectURL(file)} target="_blank" className="file-link__uploaded">
+            { file.name }
+            </a>
+            <img
+              src={closeSVG}
+              alt=""
+              className="img-close-file"
+              onClick={() => {
+                let updatedFileList = files.filter((iteratedFile) => iteratedFile.name != file.name )
+                setFiles(updatedFileList);
+              } }
+            />
+          </div>)
+        })}
       </div>
       <label htmlFor={"field.id"} className="image-input-label">
         Добавить файл
