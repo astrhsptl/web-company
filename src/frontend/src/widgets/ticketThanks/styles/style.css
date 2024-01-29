@@ -1,0 +1,23 @@
+.ticket-thanks-container {
+    justify-self: center;
+    align-self: center;
+
+    margin-top: 100px;
+    max-width: 450px;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket-thanks-text {
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 900;
+    font-size: 26px;
+    text-align: center;
+    
+    margin-bottom: 26px;
+}
