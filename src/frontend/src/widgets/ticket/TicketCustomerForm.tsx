@@ -4,6 +4,9 @@ import { UserDataFormCard } from "./components/UserDataFormCard";
 import { TicketDataFormCard } from "./components/TicketDataFormCard";
 import { FileInputTicket } from "./components/FileInputTicket";
 import { useState } from "react";
+import { sendTicketData } from "./utils/sendTicket";
+import { FileInterface } from "@/shared/interfaces";
+import { redirect } from "react-router-dom";
 
 
 interface TicketInput{
@@ -14,14 +17,16 @@ interface TicketInput{
   link: string;
   email: string;
   phone: string;
-  files?: File[];
+  files?: FileInterface[];
 }
 
 export const TicketCustomerForm = () => {
   const methods = useForm<TicketInput>();
   const [files, setFiles] = useState<File[]>([]);
-  const onSubmit: SubmitHandler<TicketInput> = (data, ...asd) => {
-    console.log(data, asd);
+  const onSubmit: SubmitHandler<TicketInput> = async (data) => { 
+    // await sendTicketData(data, files);
+    return redirect("/ticket/thanks");
+
   }
 
   return (

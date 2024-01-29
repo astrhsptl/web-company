@@ -3,16 +3,16 @@ import { BASE_API_URL } from "../base";
 import { NotFoundResponse, ProductWork } from "@/shared/interfaces";
 
 
-const ProductURL = "product-work";
+const PATH_URL = "product-work";
 
 
 const useProductWorkListHook = async () => {
-    let { data } = await axios.get<ProductWork[]>(`${BASE_API_URL}/${ProductURL}`);
+    let { data } = await axios.get<ProductWork[]>(`${BASE_API_URL}/${PATH_URL}`);
     return data;
 }
 
 const useProductWorkByIdHook = async (id: string) => {
-    let { data } = await axios.get<ProductWork | NotFoundResponse>(`${BASE_API_URL}/${ProductURL}/${id}`);
+    let { data } = await axios.get<ProductWork | NotFoundResponse>(`${BASE_API_URL}/${PATH_URL}/${id}`);
     return data;
 }
 
