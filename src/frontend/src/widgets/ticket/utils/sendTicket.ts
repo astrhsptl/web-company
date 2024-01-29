@@ -3,17 +3,6 @@ import { useFileCreate } from "@/shared/api/FetchHooks/FileFetchHook";
 import { useTicketOrderCreateHook } from "@/shared/api/FetchHooks/TicketFetchHooks";
 import { FileInterface } from "@/shared/interfaces";
 
-interface TicketInput{
-    title: string;
-    body: string;
-  
-    name: string;
-    link: string;
-    email: string;
-    phone: string;
-    files?: FileInterface[];
-}
-
 const preprocessFilesFromList = async (files: File[]): Promise<string[]> => {
     let preprocessedFiles: string[] = [];
 
@@ -58,5 +47,16 @@ export const sendTicketData = async (data: TicketInput, files: File[]) => {
         body: data.body,
         customer_id: customerID,
         files: sendedFile
-    })
+    });
+}
+
+export interface TicketInput{
+  title: string;
+  body: string;
+
+  name: string;
+  link: string;
+  email: string;
+  phone: string;
+  files?: FileInterface[];
 }
