@@ -1,3 +1,3 @@
-import { CertainBlogContent } from "./CertainBlogContent";
+import { CertainBlogBody } from "./CertainBlogBody";
 
-export { CertainBlogContent }
+export { CertainBlogBody }
