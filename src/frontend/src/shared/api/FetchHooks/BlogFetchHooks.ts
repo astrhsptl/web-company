@@ -10,8 +10,13 @@ const usePostListHook = async () => {
 }
 
 const usePostByIdHook = async (id: string) => {
-    let { data } = await axios.get<BlogInterface | NotFoundResponse>(`${BASE_API_URL}/${PATH_URL}/${id}`);
-    return data;
+    let { data, status } = await axios.get<BlogInterface | NotFoundResponse>(`${BASE_API_URL}/${PATH_URL}/${id}`);
+
+    if (status >= 200 && status < 300) {
+        return data as BlogInterface
+    };
+
+    return null;
 }
 
 export {
