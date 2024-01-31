@@ -16,7 +16,7 @@ export const Header = observer(() => {
   return ( 
     <header className={`header`}>
       <div className="headerPosition">
-        <Link to={"blog"}>
+        <Link to={"/"}>
           <img src={logotype} className="linkLogo" alt="" />
         </Link>
         <span className="headerLinkContainer">

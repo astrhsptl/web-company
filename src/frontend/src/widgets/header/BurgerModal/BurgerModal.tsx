@@ -9,7 +9,6 @@ interface ModalProps{
 }
 
 export const BurgerModal: React.FC<ModalProps> = observer(({ showed, closeModal }) => {
-  
   return (
     <span className={
       `burgerLinkContainer ${showed ? "modalActive" : ""}`}>
