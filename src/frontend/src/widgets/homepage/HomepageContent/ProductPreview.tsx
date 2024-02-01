@@ -17,7 +17,7 @@ export const ProductPreview = ({ product, positionLeft }: ProductPreviewProps) =
             <p className="product-title">{ product.title }</p>
             <p className="product-company">{ product.customer.name }</p>
             <p className="product-description">{ product.description }</p>
-            <Link to={`product/${ product.id }`}><button className="product-button">Ознакомитесь с проектом?</button></Link>
+            <Link to={`/work/${ product.id }`}><button className="product-button">Ознакомитесь с проектом?</button></Link>
         </div>
     </div>
   )
