@@ -1,12 +1,13 @@
 import Footer from '@/widgets/footer'
 import { Header } from '@/widgets/header'
-import React from 'react'
+import { CertainWorkMain } from '@/widgets/works'
 
 export const CertainProduct = () => {
   return (
     <>
-    <Header/>
-    <Footer/>
+    <Header />
+    <CertainWorkMain />
+    <Footer />
     </>
   )
 }
