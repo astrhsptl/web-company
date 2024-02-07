@@ -42,10 +42,10 @@ class ModalStatementHandler {
     
     preventDefaultForScrollKeys = (e: KeyboardEvent) => {
         // this.preventDefault(e);
-        let keys = ["ArrowDown", "ArrowUp", "PageUp", "PageDown"];
+        const keys = ["ArrowDown", "ArrowUp", "PageUp", "PageDown"];
         if (e.key in keys) {
             return false
-        };
+        }
         if (e.key == "Escape") {
             this.switchState();
         }

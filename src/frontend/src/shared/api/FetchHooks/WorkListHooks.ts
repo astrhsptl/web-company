@@ -7,12 +7,12 @@ const PATH_URL = "product-work";
 
 
 const useProductWorkListHook = async () => {
-    let { data } = await axios.get<ProductWork[]>(`${BASE_API_URL}/${PATH_URL}`);
+    const { data } = await axios.get<ProductWork[]>(`${BASE_API_URL}/${PATH_URL}`);
     return data;
 }
 
 const useProductWorkByIdHook = async (id: string) => {
-    let { data } = await axios.get<ProductWork | NotFoundResponse>(`${BASE_API_URL}/${PATH_URL}/${id}`);
+    const { data } = await axios.get<ProductWork | NotFoundResponse>(`${BASE_API_URL}/${PATH_URL}/${id}`);
     return data;
 }
 

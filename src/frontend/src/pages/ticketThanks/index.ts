@@ -1,3 +1,3 @@
-import { Ticket } from "./TicketThanks";
+import { TicketThanks } from "./TicketThanks";
 
-export { Ticket };
+export { TicketThanks };

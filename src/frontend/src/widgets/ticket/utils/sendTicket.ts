@@ -4,10 +4,10 @@ import { useTicketOrderCreateHook } from "@/shared/api/FetchHooks/TicketFetchHoo
 import { FileInterface } from "@/shared/interfaces";
 
 const preprocessFilesFromList = async (files: File[]): Promise<string[]> => {
-    let preprocessedFiles: string[] = [];
+    const preprocessedFiles: string[] = [];
 
-    for (let file of files) {
-      let uploadedFile = await useFileCreate({ file: file });
+    for (const file of files) {
+      const uploadedFile = await useFileCreate({ file: file });
       preprocessedFiles.push(uploadedFile.id);
     }
 
@@ -22,16 +22,16 @@ const getOrCreateCustomer = async (
      phone
     }: TicketInput): Promise<string> => {
 
-    let customerSearchResult = await useCustomerListHook({ search: name });
+    const customerSearchResult = await useCustomerListHook({ search: name });
 
     if (customerSearchResult.length == 0) {
-      let customerCreateData = {
+      const customerCreateData = {
         name: name,
         email: email,
         link: link,
         phone: phone,
       }
-      let customer = await useCustomerCreate(customerCreateData);
+      const customer = await useCustomerCreate(customerCreateData);
       return customer.id
     }
     return customerSearchResult[0].id;
@@ -39,8 +39,8 @@ const getOrCreateCustomer = async (
 
 
 export const sendTicketData = async (data: TicketInput, files: File[]) => {
-    let sendedFile = await preprocessFilesFromList(files); 
-    let customerID = await getOrCreateCustomer(data);
+    const sendedFile = await preprocessFilesFromList(files); 
+    const customerID = await getOrCreateCustomer(data);
 
     await useTicketOrderCreateHook({
         title: data.title,
