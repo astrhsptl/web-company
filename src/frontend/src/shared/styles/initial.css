@@ -116,6 +116,11 @@ body {
 	cursor: pointer;
 }
 
+.link__classic {
+	text-decoration: none;
+	color: #fff;
+} 
+
 @media (max-width: 750px) {
 	.button__classic{
 	  font-size: 14px;

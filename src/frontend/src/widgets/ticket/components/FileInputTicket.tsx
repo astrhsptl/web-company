@@ -11,12 +11,12 @@ export const FileInputTicket = ({ files, setFiles }: PluralInputFile) => {
     const fileList = event.target.files;
     if (!fileList || fileList.length < 1) {
       return;
-    };
+    }
 
-    let fileArray: File[] = Array.from(fileList).filter(file => {
+    const fileArray: File[] = Array.from(fileList).filter(file => {
       if (!files.find(({ name }) => name === file.name)) {
         return file;
-      };
+      }
     })
     setFiles([ ...files, ...fileArray]);
   };
@@ -37,7 +37,7 @@ export const FileInputTicket = ({ files, setFiles }: PluralInputFile) => {
               alt=""
               className="img-close-file"
               onClick={() => {
-                let updatedFileList = files.filter((iteratedFile) => iteratedFile.name != file.name )
+                const updatedFileList = files.filter((iteratedFile) => iteratedFile.name != file.name )
                 setFiles(updatedFileList);
               } }
             />

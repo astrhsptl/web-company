@@ -4,10 +4,13 @@ import { makeAutoObservable } from "mobx";
 class ModalStatementHandler {
     showing: boolean = false;
     wheelEvent: string;
+    keys: string[];
 
     constructor() {
         makeAutoObservable(this);
         this.wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+        this.keys = ["ArrowDown", "ArrowUp", "PageUp", "PageDown", "Home", "End"];
+
 
     }
    
@@ -41,14 +44,8 @@ class ModalStatementHandler {
     }
     
     preventDefaultForScrollKeys = (e: KeyboardEvent) => {
-        // this.preventDefault(e);
-        let keys = ["ArrowDown", "ArrowUp", "PageUp", "PageDown"];
-        if (e.key in keys) {
-            return false
-        };
-        if (e.key == "Escape") {
-            this.switchState();
-        }
+        if (this.keys.includes(e.key)) e.preventDefault();
+        if (e.key == "Escape") this.switchState();
     }
 
 }

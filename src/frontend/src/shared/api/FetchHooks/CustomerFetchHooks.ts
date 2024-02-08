@@ -17,17 +17,17 @@ const useCustomerListHook = async (searchArgs?: CustomerSearch) => {
         path += createQueryArgumentString(searchArgs);
     }
 
-    let { data } = await axios.get<Customer[]>(path);
+    const { data } = await axios.get<Customer[]>(path);
     return data;
 }
 
 const useCustomerByIdHook = async (id: string) => {
-    let { data } = await axios.get<Customer | NotFoundResponse>(`${BASE_API_URL}/${PATH_URL}/${id}`);
+    const { data } = await axios.get<Customer | NotFoundResponse>(`${BASE_API_URL}/${PATH_URL}/${id}`);
     return data;
 }
 
 const useCustomerCreate = async (uploadedData: CustomerCreate) => {
-    let { data } = await axios.post<Customer>(
+    const { data } = await axios.post<Customer>(
         `${BASE_API_URL}/${PATH_URL}/`,
         uploadedData, {
             headers: { "Content-Type": "multipart/form-data"}

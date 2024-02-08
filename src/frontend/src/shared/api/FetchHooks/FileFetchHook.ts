@@ -10,17 +10,17 @@ import {
 const PATH_URL = "file";
 
 const useFileListHook = async () => {
-    let { data } = await axios.get<FileInterface[]>(`${BASE_API_URL}/${PATH_URL}`);
+    const { data } = await axios.get<FileInterface[]>(`${BASE_API_URL}/${PATH_URL}`);
     return data;
 }
 
 const useFileByIdHook = async (id: string) => {
-    let { data } = await axios.get<FileInterface | NotFoundResponse>(`${BASE_API_URL}/${PATH_URL}/${id}`);
+    const { data } = await axios.get<FileInterface | NotFoundResponse>(`${BASE_API_URL}/${PATH_URL}/${id}`);
     return data;
 }
 
 const useFileCreate = async (uploadedData: FileCreationInterface) => {
-    let { data } = await axios.post<FileInterface>(
+    const { data } = await axios.post<FileInterface>(
         `${BASE_API_URL}/${PATH_URL}/`,
         uploadedData, {
             headers: { "Content-Type": "multipart/form-data"}
