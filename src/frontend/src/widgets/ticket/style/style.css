@@ -87,7 +87,7 @@
 }
 
 .text-input__custom-input::placeholder {
-	color: #fff;
+	/* color: #fff; */
     font-size: 14px;
 }
 
