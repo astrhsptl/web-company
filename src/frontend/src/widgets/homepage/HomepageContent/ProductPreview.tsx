@@ -8,7 +8,7 @@ interface ProductPreviewProps {
 
 export const ProductPreview = ({
   product,
-  positionLeft,
+  positionLeft
 }: ProductPreviewProps) => {
   return (
     <div
@@ -26,7 +26,9 @@ export const ProductPreview = ({
       >
         <p className="product-title">{product.title}</p>
         <p className="product-company">{product.customer.name}</p>
-        <p className="product-description">{product.description}</p>
+        <p className="product-description">
+          {product.description.slice(0, 50) + "..."}
+        </p>
         <Link to={`/work/${product.id}`}>
           <button className="product-button">Ознакомитесь с проектом?</button>
         </Link>

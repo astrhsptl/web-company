@@ -11,7 +11,7 @@ interface TitleSideProps {
 export const WorkTitleSide: FC<TitleSideProps> = ({ title, works, link }) => {
   return (
     <div className="work-side__info">
-      <Link to={"/work"} className="link__classic">
+      <Link to={"/work"} className="link__classic work-link__back">
         &laquo; Назад
       </Link>
       <p className="work-side__info-title">{title}</p>
