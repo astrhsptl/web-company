@@ -1,21 +1,20 @@
-interface Customer{
-    id: string;
-    name: string;
-    link?: string;
-    phone?: string;
-    email?: string;
+interface Customer {
+  id: string;
+  name: string;
+  link?: string;
+  phone?: string;
+  email?: string;
 }
 
-interface CustomerSearch{
-    id?: string;
-    name?: string;
-    link?: string;
+interface CustomerSearch {
+  id?: string;
+  name?: string;
+  link?: string;
 
-    search?: string;
+  search?: string;
 }
 
 type CustomerCreate = Omit<Customer, "id">;
 
-
 export default Customer;
-export { type CustomerSearch, type CustomerCreate }
+export { type CustomerSearch, type CustomerCreate };

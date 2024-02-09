@@ -1,49 +1,51 @@
 .footer {
-    align-self: end;
+  align-self: end;
 
-    padding-top: 50px;
-    margin-top: 50px;
-    border-top: 1px solid #fff;
+  padding-top: 50px;
+  margin-top: 50px;
+  border-top: 1px solid #fff;
 }
 
-.footer-container  {
-    display: grid;
-    grid-template-columns: 50% 50%;
+.footer-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
-.navigation-footer-link, .work-section {
-    color: #fff;
-    font-family: Montserrat;
-    text-decoration: none;
+.navigation-footer-link,
+.work-section {
+  color: #fff;
+  font-family: Montserrat;
+  text-decoration: none;
 }
 
 .logotype {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .link-block > * {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .create-ticket-footer {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .give-ticket-button {
-    padding: 10px 15px;
-    max-width: 300px;
-    width: 100%;
-    color: #fff;
-    font-family: Montserrat;
-    font-size: 18px;
-    border: 2px solid #fff;
-    background-color: #000;
-    cursor: pointer;
+  padding: 10px 15px;
+  max-width: 300px;
+  width: 100%;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 18px;
+  border: 2px solid #fff;
+  background-color: #000;
+  cursor: pointer;
 }
 
-
 @media (max-width: 750px) {
-    .navigation-footer-link, .create-ticket-footer, .give-ticket-button {
-        font-size: 14px;
-    }
+  .navigation-footer-link,
+  .create-ticket-footer,
+  .give-ticket-button {
+    font-size: 14px;
+  }
 }

@@ -1,3 +1,3 @@
 import { BlogContent } from "./BlogContent";
 
-export { BlogContent }
+export { BlogContent };

@@ -1,29 +1,29 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "root": true,
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
-        "prettier"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 11,
-        "sourceType": "module"
-    },
-    "plugins": ["react", "@typescript-eslint", "prettier"],
-    "rules": {
-        "prettier/prettier": "warn",
-        "react/prop-types": 0,
-        "react/react-in-jsx-scope": "off",
-        "no-useless-escape": "off"
-        // "react/jsx-uses-react": "off"
-    }
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": "warn",
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": "off",
+    "no-useless-escape": "off",
+    "react/no-unescaped-entities": "off"
+  }
 }

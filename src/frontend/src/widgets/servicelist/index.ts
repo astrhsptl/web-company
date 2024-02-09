@@ -1,3 +1,3 @@
 import { ServiceListContent } from "./ServiceListContent";
 
-export { ServiceListContent }
+export { ServiceListContent };

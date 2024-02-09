@@ -8,16 +8,13 @@ import "./styles/index.css";
 export const CertainBlogBody = () => {
   const { id } = useParams();
   const { data, isLoading } = useQuery(
-    ["blogById", id], async () => await usePostByIdHook(id),
+    ["blogById", id],
+    async () => await usePostByIdHook(id),
   );
 
   return (
     <div className="blog-content-container">
-    {
-      isLoading ?
-      <Loader /> :
-      <BlogCertainContent data={data} />
-    }
+      {isLoading ? <Loader /> : <BlogCertainContent data={data} />}
     </div>
-  )
-}
+  );
+};

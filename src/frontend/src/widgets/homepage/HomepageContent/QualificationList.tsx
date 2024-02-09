@@ -3,8 +3,7 @@ import DSTUSpringHack from "../images/dstu.jpg";
 import rinhHack from "../images/rinh.png";
 import humanHack from "../images/hh.jpg";
 
- 
- export const QualificationList = () => {
+export const QualificationList = () => {
   return (
     <div className="hack-container">
       <img src={cyberGardenHack} alt="" />
@@ -12,5 +11,5 @@ import humanHack from "../images/hh.jpg";
       <img src={rinhHack} alt="" />
       <img src={humanHack} alt="" />
     </div>
-  )
-}
+  );
+};

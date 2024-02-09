@@ -1,6 +1,6 @@
-import { BlogContent } from '@/widgets/blog'
-import Footer from '@/widgets/footer'
-import { Header } from '@/widgets/header'
+import { BlogContent } from "@/widgets/blog";
+import Footer from "@/widgets/footer";
+import { Header } from "@/widgets/header";
 import { Helmet } from "react-helmet";
 
 export const Blog = () => {
@@ -13,5 +13,5 @@ export const Blog = () => {
       <BlogContent />
       <Footer />
     </>
-    )
-}
+  );
+};
