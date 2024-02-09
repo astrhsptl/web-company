@@ -11,5 +11,5 @@ export const HomepageContent = () => {
       <PrinciplesOfWork />
       <FeedbackRedirect />
     </>
-  )
-}
+  );
+};

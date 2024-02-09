@@ -1,7 +1,6 @@
-import { Header } from "@/widgets/header"
+import { Header } from "@/widgets/header";
 import { HeadContent } from "./HeadContent";
 import "../styles/homepage.css";
-
 
 export const HomepageHead = () => {
   return (
@@ -9,5 +8,5 @@ export const HomepageHead = () => {
       <Header />
       <HeadContent />
     </div>
-  )
+  );
 };

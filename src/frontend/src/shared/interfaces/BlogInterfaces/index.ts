@@ -1,6 +1,6 @@
-export default interface Blog{
-    id: string;
-    title: string;
-    body: string;
-    preview: string;
+export default interface Blog {
+  id: string;
+  title: string;
+  body: string;
+  preview: string;
 }

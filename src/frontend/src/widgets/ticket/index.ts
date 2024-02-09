@@ -1,3 +1,3 @@
 import { TicketCustomerForm } from "./TicketCustomerForm";
 
-export { TicketCustomerForm }
+export { TicketCustomerForm };

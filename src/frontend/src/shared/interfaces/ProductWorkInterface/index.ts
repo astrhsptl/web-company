@@ -1,7 +1,6 @@
-interface ProductWork{
-    id: string;
-    title: string;
+interface ProductWork {
+  id: string;
+  title: string;
 }
-
 
 export default ProductWork;
