@@ -1,18 +1,17 @@
-import { ChangeEvent, useState } from "react";
 import { useFormContext } from "react-hook-form";
 
 export const AccompanyingWithResume = () => {
   const { register } = useFormContext();
-  const [labelName, setLabelName] = useState("Резюме");
-  const [fileLink, setFileLink] = useState("");
+  // const [labelName, setLabelName] = useState("Резюме");
+  // const [fileLink, setFileLink] = useState("");
 
-  const fileOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const fileList = e.target.files;
-    if (fileList && fileList.length > 0) {
-      setLabelName(fileList[0].name);
-      setFileLink(URL.createObjectURL(fileList[0]));
-    }
-  };
+  // const fileOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+  //   const fileList = e.target.files;
+  //   if (fileList && fileList.length > 0) {
+  //     setLabelName(fileList[0].name);
+  //     setFileLink(URL.createObjectURL(fileList[0]));
+  //   }
+  // };
 
   return (
     <div className="form-part-ticket">
@@ -22,7 +21,7 @@ export const AccompanyingWithResume = () => {
           {...register("accompanying", {
             maxLength: 1024,
           })}
-          placeholder="Описание..."
+          placeholder="Сопроводительное письмо..."
           className="input-textarea"
         ></textarea>
         <input
@@ -30,7 +29,7 @@ export const AccompanyingWithResume = () => {
           placeholder="Ссылка на резюме"
           className="text-input__custom-input"
         />
-        <label
+        {/* <label
           htmlFor={"field.id"}
           className="image-input-label label_as_button"
         >
@@ -54,7 +53,7 @@ export const AccompanyingWithResume = () => {
             accept=".png,.jpg,.jpeg,.img,.pdf,.doc,.docx,.ppt,.pptx"
             onChange={(e) => fileOnChange(e)}
           />
-        </label>
+        </label> */}
       </div>
     </div>
   );

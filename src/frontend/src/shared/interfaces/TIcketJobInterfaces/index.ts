@@ -6,8 +6,11 @@ interface InputJobTicket {
   accompanying: string;
   salary_bottom?: number;
   salary_top?: number;
-  resume?: File;
   resume_link?: string;
 }
 
-export { type InputJobTicket };
+interface JobTicket extends InputJobTicket {
+  id: string | number;
+}
+
+export { type InputJobTicket, type JobTicket };

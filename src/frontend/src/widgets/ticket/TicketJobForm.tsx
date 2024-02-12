@@ -1,3 +1,5 @@
+import { useTicketJobCreateHook } from "@/shared/api/FetchHooks/TikcetJobFetchHooks";
+import { InputJobTicket } from "@/shared/interfaces";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { AccompanyingWithResume } from "./components/AccompanyingWithResume";
@@ -5,13 +7,13 @@ import { CandidateDataForm } from "./components/CandidateDataForm";
 import { PositionDataForm } from "./components/PositionDataForm";
 import "./style/job.css";
 import "./style/style.css";
-import { InputJobTicket } from "./utils/JobUtils";
 
 export const TicketJobForm = () => {
   const methods = useForm<InputJobTicket>();
   const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<InputJobTicket> = async () => {
+  const onSubmit: SubmitHandler<InputJobTicket> = async (data) => {
+    await useTicketJobCreateHook(data);
     navigate("/ticket/thanks");
   };
 
