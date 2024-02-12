@@ -9,7 +9,7 @@ import "./styles/certain__main.css";
 export const CertainWorkMain = () => {
   const { id } = useParams();
   const { data, isLoading } = useQuery(["productByID", id], async () =>
-    useProductByIdHook(id)
+    useProductByIdHook(id),
   );
 
   return (

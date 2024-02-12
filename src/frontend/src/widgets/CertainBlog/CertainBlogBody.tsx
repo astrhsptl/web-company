@@ -10,7 +10,7 @@ export const CertainBlogBody = () => {
   const { id } = useParams();
   const { data, isLoading } = useQuery(
     ["blogById", id],
-    async () => await usePostByIdHook(id)
+    async () => await usePostByIdHook(id),
   );
 
   return (

@@ -12,7 +12,7 @@ const useProductListHook = async () => {
 const useProductByIdHook = async (id: string | null | undefined) => {
   if (!id) return null;
   const { data, status } = await axios.get<Product | NotFoundResponse>(
-    `${BASE_API_URL}/${PATH_URL}/${id}`
+    `${BASE_API_URL}/${PATH_URL}/${id}`,
   );
 
   if (status >= 200 && status < 300) {

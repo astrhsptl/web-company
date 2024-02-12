@@ -8,7 +8,7 @@ interface ProductPreviewProps {
 
 export const ProductPreview = ({
   product,
-  positionLeft
+  positionLeft,
 }: ProductPreviewProps) => {
   return (
     <div
