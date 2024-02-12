@@ -1,5 +1,6 @@
 import { FileInterface } from "@/shared/interfaces";
 import { FC } from "react";
+import { Slider } from "../utils";
 
 interface DescriptionSideProps {
   images: FileInterface[];
@@ -8,19 +9,12 @@ interface DescriptionSideProps {
 
 export const WorkDescriptionSide: FC<DescriptionSideProps> = ({
   images,
-  description
+  description,
 }) => {
   return (
     <div>
       <div className="carousel__container">
-        {images.map((file) => (
-          <img
-            key={file.id}
-            src={file.file}
-            alt="someone"
-            className="image__carousel"
-          />
-        ))}
+        <Slider slides={images} />
       </div>
       <p className="work-description__certain">{description}</p>
     </div>

@@ -27,7 +27,9 @@ export const WorkTitleSide: FC<TitleSideProps> = ({ title, works, link }) => {
         target="_blank"
         rel="noreferrer"
       >
-        <button className="button__classic">Ознакомиться с проектом</button>
+        <button className="button__meet button__classic">
+          Ознакомиться с проектом
+        </button>
       </a>
     </div>
   );
