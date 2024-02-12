@@ -1,22 +1,25 @@
-import Customer, { CustomerCreate, CustomerSearch } from "./CustomerInterface";
-import ProductWork from "./ProductWorkInterface";
-import Product from "./ProductInterface";
-import FileInterface, { FileCreationInterface } from "./FileInterface";
-import { TicketOrder, TicketOrderCreate } from "./TicketOrderInterfaces";
+import { FailedOperation, NotFoundResponse } from "./APIResponses/APIResponses";
 import BlogInterface from "./BlogInterfaces";
-import { NotFoundResponse, FailedOperation } from "./APIResponses/APIResponses";
+import Customer, { CustomerCreate, CustomerSearch } from "./CustomerInterface";
+import FileInterface, { FileCreationInterface } from "./FileInterface";
+import Product from "./ProductInterface";
+import ProductWork from "./ProductWorkInterface";
+import { InputJobTicket, JobTicket } from "./TIcketJobInterfaces";
+import { TicketOrder, TicketOrderCreate } from "./TicketOrderInterfaces";
 
 export {
+  type BlogInterface,
   type Customer,
   type CustomerCreate,
   type CustomerSearch,
-  type ProductWork,
-  type Product,
-  type FileInterface,
-  type FileCreationInterface,
-  type NotFoundResponse,
   type FailedOperation,
-  type BlogInterface,
+  type FileCreationInterface,
+  type FileInterface,
+  type InputJobTicket,
+  type JobTicket,
+  type NotFoundResponse,
+  type Product,
+  type ProductWork,
   type TicketOrder,
   type TicketOrderCreate,
 };

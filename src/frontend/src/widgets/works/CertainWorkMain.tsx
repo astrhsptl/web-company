@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+import { useProductByIdHook } from "@/shared/api/FetchHooks/ProductFetchHooks";
+import { Loader } from "@/shared/components";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { Loader } from "@/shared/components";
-import { useProductByIdHook } from "@/shared/api/FetchHooks/ProductFetchHooks";
-import { WorkTitleSide } from "./WorkTitleSide";
 import { WorkDescriptionSide } from "./WorkDescriptionSide";
+import { WorkTitleSide } from "./WorkTitleSide";
 import "./styles/certain__main.css";
 
 export const CertainWorkMain = () => {
@@ -13,13 +12,9 @@ export const CertainWorkMain = () => {
     useProductByIdHook(id),
   );
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   return (
     <div className="work-container__certain">
-      {isLoading ? (
+      {isLoading || !data ? (
         <Loader />
       ) : (
         <div className="work-data-container__main container">

@@ -1,8 +1,9 @@
+import { usePostByIdHook } from "@/shared/api/FetchHooks/BlogFetchHooks";
+import { Loader } from "@/shared/components";
+import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { Loader } from "@/shared/components";
 import { BlogCertainContent } from "./BlogCertainContent";
-import { usePostByIdHook } from "@/shared/api/FetchHooks/BlogFetchHooks";
 import "./styles/index.css";
 
 export const CertainBlogBody = () => {
@@ -13,8 +14,13 @@ export const CertainBlogBody = () => {
   );
 
   return (
-    <div className="blog-content-container">
-      {isLoading ? <Loader /> : <BlogCertainContent data={data} />}
-    </div>
+    <>
+      <Helmet>
+        <title>{data ? data.title : "Хуй"} | WebLab</title>
+      </Helmet>
+      <div className="blog-content-container">
+        {isLoading || !data ? <Loader /> : <BlogCertainContent data={data} />}
+      </div>
+    </>
   );
 };

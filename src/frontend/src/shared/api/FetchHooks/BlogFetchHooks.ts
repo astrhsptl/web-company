@@ -1,6 +1,6 @@
+import { BlogInterface, NotFoundResponse } from "@/shared/interfaces";
 import axios from "axios";
 import { BASE_API_URL } from "../base";
-import { BlogInterface, NotFoundResponse } from "@/shared/interfaces";
 
 const PATH_URL = "post";
 
@@ -11,7 +11,8 @@ const usePostListHook = async () => {
   return data;
 };
 
-const usePostByIdHook = async (id: string) => {
+const usePostByIdHook = async (id: string | null | undefined) => {
+  if (!id) return null;
   const { data, status } = await axios.get<BlogInterface | NotFoundResponse>(
     `${BASE_API_URL}/${PATH_URL}/${id}`,
   );

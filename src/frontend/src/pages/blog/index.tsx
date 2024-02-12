@@ -7,7 +7,7 @@ export const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Homepage | WebLab</title>
+        <title>Блог | WebLab</title>
       </Helmet>
       <Header />
       <BlogContent />

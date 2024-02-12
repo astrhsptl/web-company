@@ -1,6 +1,6 @@
+import { NotFoundResponse, Product } from "@/shared/interfaces";
 import axios from "axios";
 import { BASE_API_URL } from "../base";
-import { Product, NotFoundResponse } from "@/shared/interfaces";
 
 const PATH_URL = "product";
 
@@ -9,7 +9,8 @@ const useProductListHook = async () => {
   return data;
 };
 
-const useProductByIdHook = async (id: string) => {
+const useProductByIdHook = async (id: string | null | undefined) => {
+  if (!id) return null;
   const { data, status } = await axios.get<Product | NotFoundResponse>(
     `${BASE_API_URL}/${PATH_URL}/${id}`,
   );
@@ -21,4 +22,4 @@ const useProductByIdHook = async (id: string) => {
   return null;
 };
 
-export { useProductListHook, useProductByIdHook };
+export { useProductByIdHook, useProductListHook };
