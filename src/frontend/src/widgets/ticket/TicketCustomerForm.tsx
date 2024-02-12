@@ -1,11 +1,11 @@
-import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import { UserDataFormCard } from "./components/UserDataFormCard";
-import { TicketDataFormCard } from "./components/TicketDataFormCard";
-import { FileInputTicket } from "./components/FileInputTicket";
 import { useState } from "react";
-import { TicketInput, sendTicketData } from "./utils/sendTicket";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { FileInputTicket } from "./components/FileInputTicket";
+import { TicketDataFormCard } from "./components/TicketDataFormCard";
+import { UserDataFormCard } from "./components/UserDataFormCard";
 import "./style/style.css";
+import { TicketInput, sendTicketData } from "./utils/sendTicket";
 
 export const TicketCustomerForm = () => {
   const methods = useForm<TicketInput>();
