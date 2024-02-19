@@ -15,7 +15,7 @@ FROM nginx:alpine
 RUN apk upgrade --no-cache && \
     apk add --no-cache libgcc libstdc++
 
-COPY ./.deploy/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
 RUN rm -rf /usr/share/nginx/html/*
 
