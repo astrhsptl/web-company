@@ -1,4 +1,4 @@
-export const BASE_API_URL = "http://176.123.169.53/api/v1";
+export const BASE_API_URL = "https://api.labofdev.ru/api/v1";
 
 export const createQueryArgumentString = (searchArgs: object): string => {
   let queryParams = "?";
