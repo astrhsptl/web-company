@@ -6,17 +6,14 @@ services:
       dockerfile: ./src/backend/Dockerfile
       context: .
     container_name: backend
-    links:
-      - postgresql:postgresql
-    depends_on:
-      - postgresql
-      - traefik
     restart: always
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=web"
+      - "traefik.http.routers.backend.entrypoints=websecure"
+      - "traefik.http.routers.backend.tls.certresolver=myresolver"
       - "traefik.http.routers.backend.service=backend"
-      - "traefik.http.routers.backend.rule=Host(`backend.localhost`)"
+      - "traefik.http.routers.backend.rule=Host(`api.labofdev.ru`) && (PathPrefix(`/api/`) || PathPrefix(`/admin/`) || PathPrefix(`/media/`) || PathPrefix(`/static/`))"
       - "traefik.http.services.backend.loadbalancer.server.port=4000"
     command: >
       sh -c " python manage.py makemigrations &&
@@ -31,6 +28,12 @@ services:
       - DB_PASSWORD=postgresql
       - DB_HOST=postgresql
       - DB_PORT=5432
+      - EMAIL=management.weblab@bk.ru
+      - EMAIL_HOST=smtp.mail.ru
+      - EMAIL_HOST_PASSWORD=AvW2GXLLWtGvWwtSpL6e
+      - EMAIL_PORT=465
+      - REDIS_PORT=6379
+      - REDIS_HOST=redis
     volumes:
       - static_volume:/app/static
       - media_volume:/app/media
