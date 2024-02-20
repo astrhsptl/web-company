@@ -1,3 +1,4 @@
+import { NotFound } from "@/pages/NotFound";
 import { TicketJobPage } from "@/pages/TicketJob";
 import { Blog } from "@/pages/blog";
 import { CertainBlog } from "@/pages/certainBlog/CertainBlog";
@@ -18,13 +19,14 @@ export default function Application() {
       console.log(
         `Привет, мы команда Потребления контента и рекомендаций — создаём раздел,
       в котором ты сейчас находишься. Хочешь присоединиться к нам?
-      Заполни форму и присоединяйся к нам: http://localhost:5173/job`,
+      Заполни форму и присоединяйся к нам: http://localhost:5173/job`
       );
       setComplited(true);
     }
   });
   return (
     <Routes>
+      <Route key={"*"} path={"*"} element={<NotFound />} />
       <Route key={"/"} path={"/"} element={<Homepage />} />
       <Route key={"/work"} path={"/work"} element={<Work />} />
       <Route key={"/blog"} path={"/blog"} element={<Blog />} />
