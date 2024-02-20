@@ -23,7 +23,9 @@ DEBUG = bool(int(env("DEBUG")))
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "0.0.0.0",
-    "backend.localhost"
+    "backend.localhost",
+    "176.123.169.53",
+    "api.labofdev.ru"
 ]
 
 
