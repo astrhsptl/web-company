@@ -1,8 +1,9 @@
 import logotype from "@/widgets/header/svg/logotype.svg";
+import { Link, useNavigate } from "react-router-dom";
 import "./styles/style.css";
-import { Link } from "react-router-dom";
 
 export const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="footer">
       <div className="container footer-container">
@@ -15,22 +16,22 @@ export const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to={"/"} className="navigation-footer-link">
+              <Link to={"/blog/"} className="navigation-footer-link">
                 Блог
               </Link>
             </li>
             <li>
-              <Link to={"/"} className="navigation-footer-link">
+              <Link to={"/work/"} className="navigation-footer-link">
                 Работы
               </Link>
             </li>
             <li>
-              <Link to={"/"} className="navigation-footer-link">
+              <Link to={"/service/"} className="navigation-footer-link">
                 Услуги
               </Link>
             </li>
             <li>
-              <Link to={"/"} className="navigation-footer-link">
+              <Link to={"/ticket/new/"} className="navigation-footer-link">
                 Оставить заявку
               </Link>
             </li>
@@ -38,7 +39,12 @@ export const Footer = () => {
         </section>
         <section className="work-section">
           <p className="create-ticket-footer">Хотите работать с нами?</p>
-          <button className="give-ticket-button">Оставьте заявку</button>
+          <button
+            className="give-ticket-button"
+            onClick={() => navigate("/ticket/new/")}
+          >
+            Оставьте заявку
+          </button>
         </section>
       </div>
     </footer>
