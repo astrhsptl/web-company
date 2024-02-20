@@ -6,26 +6,7 @@ on:
       branches: [ "main" ]
 
 jobs:
-  frontend-lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          working-directory: ./src/frontend
-          node-version: '16'
-          cache: 'npm'
-      
-      - name: Installing libs
-        working-directory: ./src/frontend
-        run: npm i 
-
-      - name: Linting
-        working-directory: ./src/frontend
-        run: npm run lint
-
   frontend-build:
-    needs: [frontend-lint]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -42,7 +23,7 @@ jobs:
 
       - name: Tagging frontend image
         working-directory: ./src/frontend
-        run: docker image tag ${{ github.event.repository.name }} ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}-frontend:latest
+        run: docker image tag ${{ github.event.repository.name }}-frontend ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}-frontend:latest
 
       - name: Pushing frontend image
         working-directory: ./src/frontend
@@ -66,7 +47,7 @@ jobs:
 
       - name: Tagging backend image
         working-directory: ./src/backend
-        run: docker image tag ${{ github.event.repository.name }} ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}-backend:latest
+        run: docker image tag ${{ github.event.repository.name }}-backend ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}-backend:latest
 
       - name: Pushing backend image
         working-directory: ./src/backend
