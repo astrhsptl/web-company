@@ -1,11 +1,14 @@
 export const PresentText = () => {
   return (
     <div className="text-presentation-container container-custom">
-      <p className="text-present">HomepageCont ent</p>
+      <p className="text-present">WE ARE WEBLAB</p>
       <p className="text-present-under">
-        HomepageCont entHomepageCont entHomepageCont entHomepageCont ent
-        HomepageCont entHomepageCont entHomepageCont entv HomepageCont ent
-        HomepageCont ent HomepageCont ent HomepageCont ent v HomepageCont ent
+        Мы проектируем и разрабатываем веб-сайты, приложения и цифровые сервисы,
+        которые помогают нашим клиентам расти, внедрять инновации и
+        трансформироваться. Мы слушаем, учимся и понимаем, прежде чем приступить
+        к созданию. Мы вместе определяем ваши цели, а затем используем наш опыт,
+        чтобы найти ту самую "золотую серединку" реалистичности и
+        результативности.
       </p>
     </div>
   );
