@@ -2,16 +2,16 @@ version: '3.9'
 services:
 
   backend:
-    build: 
-      dockerfile: ./src/backend/Dockerfile
-      context: .
+    iamge: xoriax/web-company-backend:latest
     container_name: backend
     restart: always
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=web"
+      - "traefik.http.routers.backend.entrypoints=websecure"
+      - "traefik.http.routers.backend.tls.certresolver=myresolver"
       - "traefik.http.routers.backend.service=backend"
-      - "traefik.http.routers.backend.rule=Host(`backend.localhost`)"
+      - "traefik.http.routers.backend.rule=Host(`api.labofdev.ru`) && (PathPrefix(`/api/`) || PathPrefix(`/admin/`) || PathPrefix(`/media/`) || PathPrefix(`/static/`))"
       - "traefik.http.services.backend.loadbalancer.server.port=4000"
     command: >
       sh -c " python manage.py makemigrations &&
@@ -39,6 +39,19 @@ services:
       - web
     ports:
       - "4000:4000"
+
+  frontend:
+    image: xoriax/web-company-frontend:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.routers.frontend.tls.certresolver=myresolver"
+      - "traefik.http.routers.frontend.service=frontend"
+      - "traefik.http.routers.frontend.rule=Host(`web-comapny.labofdev.ru`)"
+      - "traefik.http.services.frontend.loadbalancer.server.port=80"
+    networks:
+      - web
 
 volumes:
   media_volume:
