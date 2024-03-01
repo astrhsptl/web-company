@@ -1,3 +1,4 @@
+import { useProductWorkListHook } from "@/shared/api/FetchHooks/WorkListHooks";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import "./style/style.css";
@@ -6,17 +7,7 @@ export const ServiceListContent = () => {
     const navigate = useNavigate();
     const { data } = useQuery({
         queryKey: ["postList"],
-        queryFn: () => {
-            return [
-                { id: 1, title: "Минет" },
-                { id: 2, title: "Минет" },
-                { id: 3, title: "Минет" },
-                { id: 4, title: "Минет" },
-                { id: 5, title: "Минет" },
-                { id: 6, title: "Минет" }
-            ];
-        }
-        // queryFn: () => useProductWorkListHook(),
+        queryFn: () => useProductWorkListHook()
     });
 
     return (
