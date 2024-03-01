@@ -1,28 +1,40 @@
-import { useProductWorkListHook } from "@/shared/api/FetchHooks/WorkListHooks";
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
 import "./style/style.css";
-import { Link } from "react-router-dom";
 
 export const ServiceListContent = () => {
-  const { data } = useQuery({
-    queryKey: ["postList"],
-    queryFn: () => useProductWorkListHook(),
-  });
+    const navigate = useNavigate();
+    const { data } = useQuery({
+        queryKey: ["postList"],
+        queryFn: () => {
+            return [
+                { id: 1, title: "Минет" },
+                { id: 2, title: "Минет" },
+                { id: 3, title: "Минет" },
+                { id: 4, title: "Минет" },
+                { id: 5, title: "Минет" },
+                { id: 6, title: "Минет" }
+            ];
+        }
+        // queryFn: () => useProductWorkListHook(),
+    });
 
-  return (
-    <div className="service-work-container">
-      <p className="service-work-title">
-        Самый маленький спектр огромного количества услуг от нас
-      </p>
-      <ul className="service-collection">
-        {data?.map((productWork) => (
-          <li key={productWork.id}>
-            <Link to={"/ticket/new"} className="service-work-link">
-              {productWork.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div className="service-work-container">
+            <p className="service-work-title">
+                Самый маленький спектр огромного количества услуг от нас
+            </p>
+            <div className="service-collection">
+                {data?.map((productWork) => (
+                    <div
+                        key={productWork.id}
+                        className="service-work-card"
+                        onClick={() => navigate("/ticket/new")}
+                    >
+                        {productWork.title}
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 };
