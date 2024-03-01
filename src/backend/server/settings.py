@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://api.labofdev.ru",
     "https://api.localhost",
+    "https://api.127.0.0.1",
     "https://labofdev.ru",
 ]
 
